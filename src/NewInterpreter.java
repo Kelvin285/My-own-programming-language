@@ -9,7 +9,7 @@ import java.awt.Color;
 import java.awt.image.BufferedImage;
 
 
-public class NewInterpreter {
+public class Interpreter {
 	
 	public static final int MAX_ARRAY = 4096;
 	public static final int MAX_X = 1002;
@@ -84,12 +84,12 @@ public class NewInterpreter {
 	
 	public static void main(String[] args) {
 		if (args.length == 0) {
-			args = new String[]{"test/GpuTest"};
+			args = new String[]{"test/TestCode"};
 		}
-		new NewInterpreter(args[0]);
+		new Interpreter(args[0]);
 	}
 	
-	public NewInterpreter(String f) {
+	public Interpreter(String f) {
 		file = "";
 		try {
 			Scanner scanner = new Scanner(new File(f));
