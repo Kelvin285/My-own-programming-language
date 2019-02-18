@@ -1,20 +1,27 @@
+//setting the speed of the program to 1000 per update (a loop will look through and execute the code 1000 times each update)
 speed 1000
+//creating the variables for drawing to the screen
 decimal x 0
 decimal y 0
 decimal color 999999
-
+//creates a window (width and height == 500, name = "test")
 window 500 500 test
 
 
 :A
+
+//start modifying the color variable
 mod color 0
 nadd 1
+//if the color is greater than a value, subtract a value from it
 ngreater 99999999
 nsub 99999999
-	//jmp INC_X
+
+//start modifying x
 mod x 0
 nless 500
 nadd 1
+//if x > 499 set it to zero and increment y by 1
 ngreater 499
 jmp RESET
 jmp B
@@ -27,6 +34,8 @@ ngreater 499
 nsub 499
 
 :B
-
+//draw the color to the x and y coordinates
 ndraw x y color
+
+//go back to label A and continue the loop
 jmp A
